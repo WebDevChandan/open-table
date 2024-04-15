@@ -1,4 +1,6 @@
-import { PrismaClient, Review } from '@prisma/client'
+import prisma from "@/utils/prisma";
+import { Review } from '@prisma/client';
+import { notFound } from 'next/navigation';
 import Description from "./components/Description";
 import Image from "./components/Image";
 import Rating from "./components/Rating";
@@ -6,13 +8,10 @@ import ReservationCard from "./components/ReservationCard";
 import RestaurantNavBar from "./components/RestaurantNavBar";
 import Reviews from "./components/Reviews";
 import Title from "./components/Title";
-import { error } from 'console';
-import { notFound } from 'next/navigation';
 
-const prisma = new PrismaClient();
 
 interface Restaurant {
-    id: number;
+    id: string;
     name: string;
     slug: string;
     images: string[];

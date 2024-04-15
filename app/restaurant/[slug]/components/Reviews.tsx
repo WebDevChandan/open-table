@@ -1,7 +1,5 @@
 import Stars from "@/app/components/Stars";
-import { PrismaClient, Review } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { Review } from "@prisma/client";
 
 export default async function Reviews({ reviews }: { reviews: Review[] }) {
 

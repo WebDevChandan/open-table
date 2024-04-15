@@ -1,8 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import prisma from "@/utils/prisma";
+import { PRICE } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { PRICE, PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 type Data = {
   name: string;
@@ -32,18 +31,18 @@ export default async function handler(
   const cuisines = await prisma.cuisine.findMany();
 
   const indianCuisineId =
-    cuisines.find((cuisine) => cuisine.name === "indian")?.id || 1;
+    cuisines.find((cuisine) => cuisine.name === "indian")?.id || "";
   const mexicanCuisineId =
-    cuisines.find((cuisine) => cuisine.name === "mexican")?.id || 1;
+    cuisines.find((cuisine) => cuisine.name === "mexican")?.id || "";
   const italianCuisineId =
-    cuisines.find((cuisine) => cuisine.name === "italian")?.id || 1;
+    cuisines.find((cuisine) => cuisine.name === "italian")?.id || "";
 
   const ottawaLocationId =
-    locations.find((location) => location.name === "ottawa")?.id || 1;
+    locations.find((location) => location.name === "ottawa")?.id || "";
   const torontoLocationId =
-    locations.find((location) => location.name === "toronto")?.id || 1;
+    locations.find((location) => location.name === "toronto")?.id || "";
   const niagaraLocationId =
-    locations.find((location) => location.name === "niagara")?.id || 1;
+    locations.find((location) => location.name === "niagara")?.id || "";
 
   await prisma.restaurant.createMany({
     data: [
@@ -522,49 +521,49 @@ export default async function handler(
 
   const vivaanId =
     restaurants.find((restaurant) => restaurant.name === "Vivaan - fine Indian")
-      ?.id || 1;
+      ?.id || "";
   const RamaKrishnaId =
     restaurants.find((restaurant) => restaurant.name === "RamaKrishna Indian")
-      ?.id || 1;
+      ?.id || "";
   const coconutLagoonId =
     restaurants.find((restaurant) => restaurant.name === "Coconut Lagoon")
-      ?.id || 1;
+      ?.id || "";
   const lastTrainToDelhiId =
     restaurants.find((restaurant) => restaurant.name === "Last Train to Delhi")
-      ?.id || 1;
+      ?.id || "";
   const adrakYorkvilleId =
     restaurants.find((restaurant) => restaurant.name === "Adrak Yorkville")
-      ?.id || 1;
+      ?.id || "";
   const curryishTavernId =
     restaurants.find((restaurant) => restaurant.name === "Curryish Tavern")
-      ?.id || 1;
+      ?.id || "";
   const utsavId =
-    restaurants.find((restaurant) => restaurant.name === "Utsav")?.id || 1;
+    restaurants.find((restaurant) => restaurant.name === "Utsav")?.id || "";
   const pukkaId =
-    restaurants.find((restaurant) => restaurant.name === "Pukka")?.id || 1;
+    restaurants.find((restaurant) => restaurant.name === "Pukka")?.id || "";
   const kamasutraIndianId =
     restaurants.find((restaurant) => restaurant.name === "Kamasutra Indian")
-      ?.id || 1;
+      ?.id || "";
   const eldoradoTacoId =
     restaurants.find((restaurant) => restaurant.name === "Eldorado Taco")?.id ||
-    1;
+    "";
   const laBartolaId =
-    restaurants.find((restaurant) => restaurant.name === "La Bartola")?.id || 1;
+    restaurants.find((restaurant) => restaurant.name === "La Bartola")?.id || "";
   const elCatrinId =
-    restaurants.find((restaurant) => restaurant.name === "El Catrin")?.id || 1;
+    restaurants.find((restaurant) => restaurant.name === "El Catrin")?.id || "";
   const mariachisId =
     restaurants.find((restaurant) => restaurant.name === "3 Mariachis")?.id ||
-    1;
+    "";
   const canoRestaurantId =
     restaurants.find((restaurant) => restaurant.name === "Cano Restaurant")
-      ?.id || 1;
+      ?.id || "";
   const bluRistoranteId =
     restaurants.find((restaurant) => restaurant.name === "Blu Ristorante")
-      ?.id || 1;
+      ?.id || "";
   const stelvioId =
-    restaurants.find((restaurant) => restaurant.name === "Stelvio")?.id || 1;
+    restaurants.find((restaurant) => restaurant.name === "Stelvio")?.id || "";
   const sofiaId =
-    restaurants.find((restaurant) => restaurant.name === "Sofia")?.id || 1;
+    restaurants.find((restaurant) => restaurant.name === "Sofia")?.id || "";
 
   await prisma.item.createMany({
     data: [

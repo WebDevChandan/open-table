@@ -6,11 +6,12 @@ export default function Image({images}:{images: string[]}) {
                 {images.length} photo{images.length>1?"s":""}
             </h1>
             <div className="flex flex-wrap">
-                {images.map(imageUrl => (
+                {images.map((imageUrl, index) => (
                     <img
                         className="w-56 h-44 mr-1 mb-1"
                         src={imageUrl}
                         alt=""
+                        key={index}
                     />
                 ))}
             </div>

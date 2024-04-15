@@ -4,7 +4,7 @@ import Price from "@/app/components/Price";
 import Rating from "./Rating";
 
 interface RestaurantProps {
-    id: number;
+    id: string;
     name: string;
     main_image: string;
     price: PRICE;

@@ -1,9 +1,9 @@
-import { PrismaClient, PRICE, Cuisine } from '@prisma/client';
+import prisma from "@/utils/prisma";
+import { PRICE } from '@prisma/client';
 import Header from "./components/Header";
 import RestaurantCard from "./components/RestaurantCard";
 import SearchSideBar from "./components/SearchSideBar";
 
-const prisma = new PrismaClient();
 
 export interface SearchParams { city?: string, cuisine?: string, price?: PRICE }
 

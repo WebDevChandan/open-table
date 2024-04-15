@@ -4,11 +4,11 @@ import { SearchParams } from "../page";
 
 
 interface LocationCuisineProp {
-    id: number;
+    id: string;
     name: string;
 }
 
-export default function SearchSideBar({ locations, cuisines, searchParams }: { locations: LocationCuisineProp[], cuisines: LocationCuisineProp[], searchParams: SearchParams}) {
+export default function SearchSideBar({ locations, cuisines, searchParams }: { locations: LocationCuisineProp[], cuisines: LocationCuisineProp[], searchParams: SearchParams }) {
 
     const prices = [{
         price: PRICE.CHEAP,
@@ -67,7 +67,7 @@ export default function SearchSideBar({ locations, cuisines, searchParams }: { l
             <div className="mt-3 pb-4">
                 <h1 className="mb-2">Price</h1>
                 <div className="flex">
-                    {prices.map(({price, label, className}) => (
+                    {prices.map(({ price, label, className }) => (
                         <Link
                             href={{
                                 pathname: "/search",
@@ -78,7 +78,7 @@ export default function SearchSideBar({ locations, cuisines, searchParams }: { l
                             }}
                             className={className}>
                             {label}
-                        </Link> 
+                        </Link>
                     ))}
                 </div>
             </div>
